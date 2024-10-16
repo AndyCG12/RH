@@ -10,13 +10,18 @@ class CreateEmpleadosTable extends Migration
     {
         Schema::create('empleados', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('apellidoP');
-            $table->string('apellidoM');
-            $table->string('email')->unique();
-            $table->string('puesto');
-            $table->string('departamento');
-            /* $table->decimal('salary', 8, 2); */
+            $table->string('nombre', 100);
+            $table->string('apellidoP', 100);
+            $table->string('apellidoM', 100);
+            $table->string('email', 100)->unique();
+            $table->string('telefono', 100)->unique();
+            $table->date('fecha_nacimiento');
+            $table->date('fecha_contratacion');
+            /* $table->string('puesto', 100); */
+            $table->string('imagen')->nullable();
+            $table->foreignId('departamento_id')->nullable()->constrained('departamentos')->onDelete('set null');
+            $table->foreignId('puesto_id')->nullable()->constrained('puestos')->onDelete('set null');
+
             $table->timestamps();
         });
     }

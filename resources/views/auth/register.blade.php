@@ -17,8 +17,8 @@
 
     <div class="register-container">
         <div class="register-header mb-25px h1">
-            <div class="mb-1">{{ __('Sign Up') }}</div>
-            <small class="d-block fs-15px lh-16">{{ __('Create your Color Admin Account. It\'s free and always will be.') }}</small>
+            <div class="mb-1">{{ __('Registrarse') }}</div>
+            <small class="d-block fs-15px lh-16">{{ __('Crea tu cuenta para usar la plataforma') }}</small>
         </div>
 
         <div class="register-content">
@@ -55,11 +55,11 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="email_confirmation" class="mb-2">{{ __('Re-enter Email') }} <span class="text-danger">*</span></label>
-                    <input id="email_confirmation" type="email" class="form-control fs-13px" name="email_confirmation" required placeholder="{{ __('Re-enter email address') }}">
+                    <label for="email_confirmation" class="mb-2">{{ __('Verificar Email') }} <span class="text-danger">*</span></label>
+                    <input id="email_confirmation" type="email" class="form-control fs-13px" name="email_verified_at" required placeholder="{{ __('Re-enter email address') }}">
                 </div>
                 <div class="mb-4">
-                    <label for="password" class="mb-2">{{ __('Password') }} <span class="text-danger">*</span></label>
+                    <label for="password" class="mb-2">{{ __('Contraseña') }} <span class="text-danger">*</span></label>
                     <input id="password" type="password" class="form-control fs-13px @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="{{ __('Password') }}">
                     @error('password')
                         <span class="invalid-feedback" role="alert">
@@ -68,13 +68,13 @@
                     @enderror
                 </div>
                 <div class="mb-4">
-                    <label for="password-confirm" class="mb-2">{{ __('Confirm Password') }} <span class="text-danger">*</span></label>
+                    <label for="password-confirm" class="mb-2">{{ __('Confirmar Contraseña') }} <span class="text-danger">*</span></label>
                     <input id="password-confirm" type="password" class="form-control fs-13px" name="password_confirmation" required autocomplete="new-password" placeholder="{{ __('Confirm Password') }}">
                 </div>
                 <div class="form-check mb-4">
-                    <input class="form-check-input @error('agreement') is-invalid @enderror" type="checkbox" value="1" id="agreementCheckbox" name="agreement" required>
+                    <input class="form-check-input @error('agreement') is-invalid @enderror" type="checkbox" value="1" id="agreementCheckbox" name="remember_token" required>
                     <label class="form-check-label" for="agreementCheckbox">
-                        {!! __('By clicking Sign Up, you agree to our <a href="#">Terms</a> and that you have read our <a href="#">Data Policy</a>, including our <a href="#">Cookie Use</a>.') !!}
+                        {!! __('Presiona aqui para validar que los datos son correctos') !!}
                     </label>
                     @error('agreement')
                         <span class="invalid-feedback" role="alert">
@@ -84,15 +84,15 @@
                 </div>
                 <div class="mb-4">
                     <button type="submit" class="btn btn-theme d-block w-100 btn-lg h-45px fs-13px">
-                        {{ __('Sign Up') }}
+                        {{ __('Registrar') }}
                     </button>
                 </div>
                 <div class="mb-4 pb-5">
-                    {{ __('Already a member?') }} <a href="{{ route('login') }}">{{ __('Click here to login') }}</a>.
+                    {{ __('Ya tienes cuenta?') }} <a href="{{ route('login') }}">{{ __('Click aqui para ir al login') }}</a>.
                 </div>
                 <hr class="bg-gray-600 opacity-2" />
                 <p class="text-center text-gray-600">
-                    &copy; {{ __('Color Admin All Right Reserved') }} {{ date('Y') }}
+                    &copy; {{ __('GO 1 Technologie, todos los drechos reservados') }} {{ date('Y') }}
                 </p>
             </form>
         </div>

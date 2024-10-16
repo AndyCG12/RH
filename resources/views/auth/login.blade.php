@@ -15,7 +15,7 @@
     <!-- END news-feed -->
 
     <!-- BEGIN login-container -->
-    <div class="login-container">
+    <div class="login-container ">
         <!-- BEGIN login-header -->
         <div class="login-header mb-30px">
             <div class="brand">
@@ -33,20 +33,20 @@
                 @csrf
                 <div class="form-floating mb-15px">
                     <input type="email" class="form-control h-45px fs-13px" placeholder="Email Address" id="email" name="email" required />
-                    <label for="email" class="d-flex align-items-center fs-13px text-gray-600">Email Address</label>
+                    <label for="email" class="d-flex align-items-center fs-13px text-gray-600">Email</label>
                 </div>
                 <div class="form-floating mb-15px">
                     <input type="password" class="form-control h-45px fs-13px" placeholder="Password" id="password" name="password" required />
-                    <label for="password" class="d-flex align-items-center fs-13px text-gray-600">Password</label>
+                    <label for="password" class="d-flex align-items-center fs-13px text-gray-600">Contraseña</label>
                 </div>
                 <div class="form-check mb-30px">
                     <input class="form-check-input" type="checkbox" value="1" id="remember" name="remember" />
                     <label class="form-check-label" for="remember">
-                        Remember Me
+                        Recordar credenciales
                     </label>
                 </div>
                 <div class="mb-15px">
-                    <button type="submit" class="btn btn-theme d-block h-45px w-100 btn-lg fs-14px">Sign me in</button>
+                    <button type="submit" class="btn btn-theme d-block h-45px w-100 btn-lg fs-14px">Acceder</button>
                 </div>
                 <div class="mb-40px pb-40px text-dark">
                     No tienes cuenta Click <a href="{{ route('register') }}" class="text-primary">aqui</a> para registrarte.

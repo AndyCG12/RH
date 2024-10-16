@@ -6,7 +6,7 @@ import 'preact/compat';
 const globalLocales = [];
 
 const MINIMAL_RAW_EN_LOCALE = {
-    code: 'en',
+    code: 'es',
     week: {
         dow: 0,
         doy: 4, // 4 days need to be within the year to be considered the first week
@@ -33,7 +33,7 @@ const MINIMAL_RAW_EN_LOCALE = {
     moreLinkText: 'more',
     noEventsText: 'No events to display',
 };
-const RAW_EN_LOCALE = Object.assign(Object.assign({}, MINIMAL_RAW_EN_LOCALE), { 
+const RAW_EN_LOCALE = Object.assign(Object.assign({}, MINIMAL_RAW_EN_LOCALE), {
     // Includes things we don't want other locales to inherit,
     // things that derive from other translatable strings.
     buttonHints: {

@@ -41,6 +41,18 @@ var handleGritterNotification = function() {
 		});
 		return false;
 	});
+
+//aqui comienza las notificaciones para crear, editar y eliminar.
+$('#add-empleado').click(function(){
+    $.gritter.add({
+        title: 'This is a notice without an image! ',
+        text: 'Se ha agregado el empleado: ' + employeeName
+    });
+    return false;
+});
+//aqui termina el codigo de notificaciones
+
+
 	$('#add-without-image').click(function(){
 		$.gritter.add({
 			title: 'This is a notice without an image!',
@@ -112,7 +124,28 @@ var handleGritterNotification = function() {
 		});
 		return false;
 	});
+
+
+
+
+    function showEmployeeNotification(title, message, className) {
+        $.gritter.add({
+            title: title,
+            text: message,
+            class_name: className,
+            sticky: false,
+            time: 3000
+        });
+    }
 };
+
+var notification = $('#notification-data');
+    if (notification.length) {
+        var data = JSON.parse(notification.val());
+        showEmployeeNotification(data.title, data.message, 'gritter-' + data.type);
+    }
+
+
 
 var handleSweetNotification = function() {
 	$('[data-click="swal-primary"]').click(function(e) {
@@ -256,3 +289,59 @@ var Notification = function () {
 $(document).ready(function() {
 	Notification.init();
 });
+
+function showEmployeeNotification(title, message, className) {
+    $.gritter.add({
+        title: title,
+        text: message,
+        class_name: className,
+        sticky: false,
+        time: 3000
+    });
+}
+/* $(document).on('click', '.btn-add-employee, .btn-edit-employee, .btn-delete-employee', function(e) {
+    e.preventDefault();
+
+    var action = $(this).hasClass('btn-add-employee') ? 'add' : ($(this).hasClass('btn-edit-employee') ? 'edit' : 'delete');
+    var employeeName = $(this).data('name') || 'Empleado';
+    var employeeId = $(this).data('id'); // Solo aplicable a editar/eliminar
+
+    var formAction, method, title, message, className;
+
+    switch(action) {
+        case 'add':
+            title = 'Empleado Agregado';
+            message = 'Se ha agregado el empleado: ' + employeeName;
+            className = 'gritter-success';
+            formAction = '{{ route("empleados.store") }}';  // Ruta para agregar
+            method = 'POST';
+            break;
+        case 'edit':
+            title = 'Empleado Actualizado';
+            message = 'Se ha actualizado el empleado: ' + employeeName;
+            className = 'gritter-info';
+            formAction = '{{ route("empleados.edit") }}' + employeeId;  // Ruta para editar
+            method = 'PUT';
+            break;
+        case 'delete':
+            title = 'Empleado Eliminado';
+            message = 'Se ha eliminado el empleado: ' + employeeName;
+            className = 'gritter-warning';
+            formAction = '/empleados/' + employeeId;  // Ruta para eliminar
+            method = 'DELETE';
+            break;
+    }
+
+    // Configurar el formulario correspondiente
+    var form = $(this).closest('form');
+    form.attr('action', formAction);
+    form.find('input[name="_method"]').val(method);
+
+    // Mostrar la notificación
+    showEmployeeNotification(title, message, className);
+
+    // Enviar el formulario después de la notificación
+    setTimeout(function() {
+        form.submit();  // Enviar el formulario
+    }, 1000);  // Espera 1 segundo para mostrar la notificación */
+

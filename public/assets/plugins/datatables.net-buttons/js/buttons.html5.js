@@ -968,12 +968,12 @@ DataTable.ext.buttons.copyHtml5 = {
 
 				if (successful) {
 					dt.buttons.info(
-						dt.i18n('buttons.copyTitle', 'Copy to clipboard'),
+						dt.i18n('buttons.copyTitle', 'Copiado al portapepeles'),
 						dt.i18n(
 							'buttons.copySuccess',
 							{
-								1: 'Copied one row to clipboard',
-								_: 'Copied %d rows to clipboard'
+								1: 'Se Copió una fila al portapapeles',
+								_: 'Se Copió %d filas al portapapeles'
 							},
 							exportData.rows
 						),
