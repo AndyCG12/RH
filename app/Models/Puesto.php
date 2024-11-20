@@ -16,5 +16,10 @@ class Puesto extends Model
     {
         return $this->hasMany(Empleado::class);
     }
+    public function nominas()
+{
+    return $this->hasMany(Nomina::class);
+}
+
 }
 
