@@ -137,12 +137,12 @@ Auth::routes();
 /* Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); */
 
 Route::get('/', function () {
-    return redirect()->route('empleados');
+    return redirect()->route();
 });
 
 Auth::routes();
 
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 Route::get('/incidencias', [IncidenciaController::class, 'index'])->name('incidencias');

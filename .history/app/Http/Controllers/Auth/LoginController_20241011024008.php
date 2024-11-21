@@ -31,7 +31,7 @@ class LoginController extends Controller
      * @var string
      */
 
-    protected $redirectTo = '/empleados';
+    protected $redirectTo = '/home';
 
     protected function attemptLogin(Request $request)
 {
